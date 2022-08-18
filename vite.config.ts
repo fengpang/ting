@@ -150,4 +150,8 @@ export default defineConfig({
     // TODO: workaround until they support native ESM
     noExternal: ['workbox-window', /vue-i18n/],
   },
+
+  server: {
+    host: '0.0.0.0', // 服务器主机名，如果允许外部访问，可设置为"0.0.0.0"
+  },
 })
