@@ -1,13 +1,18 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import type { User } from '~/types'
 
 export const useUserStore = defineStore('user', {
-  state: (): User => {
-    return {
+  state: () => {
+    const user = useStorage('user', {
       name: 'fengpang',
       account: 0,
       avatar: 'xxx',
-    }
+    })
+    return user
+  },
+  actions: {
+    reset() {
+      this.$state.account = 0
+    },
   },
 })
 

@@ -16,11 +16,11 @@ export interface Action {
   name: string
   icon: string
   starCount: number
-  status: string
+  status: number
 }
 
 export interface Reward {
   name: string
   price: number
-  status: string
+  status: number
 }

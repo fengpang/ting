@@ -1,23 +1,40 @@
 <script setup lang="ts">
 import type { Action } from '~/types'
-const actionList = useConfigStore().actionList
+const configStore = useConfigStore()
+const actionList = configStore.actionList
 const user = useUserStore()
 const punch = (action: Action) => {
-  action.status = 'done'
+  if (action.status === 1)
+    return
+  action.status = 1
   user.account += action.starCount
+}
+
+const router = useRouter()
+
+const goShopping = () => {
+  router.push({ name: 'shopping' })
+}
+
+const reset = () => {
+  user.reset()
+  configStore.resetActionList()
 }
 </script>
 
 <template>
   <div>
     <h1>{{ user.account }}</h1>
-    <ul class="action-list">
-      <li v-for="(action, index) in actionList" :key="index" class="action" @click="punch(action)">
-        {{ action.name }}
-        {{ action.icon }}
-        {{ action.status }}
+    <button @click="reset">
+      reset
+    </button>
+    <ul>
+      <li v-for="(action, index) in actionList" :key="index" class="action" :class="{ disabled: action.status === 1 }" @click="punch(action)">
+        <div i-openmoji-1st-place-medal w-sm h-sm />
+        <span>{{ action.name }}</span>
       </li>
     </ul>
+    <div i-openmoji-crown w-xs h-xs @click="goShopping" />
   </div>
 </template>
 

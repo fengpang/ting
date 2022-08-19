@@ -3,11 +3,11 @@ import type { Action, Reward } from '~/types'
 
 export const useConfigStore = defineStore('config', {
   state: () => {
-    const actionList: Action[] = [
-      { name: '背单词', icon: 'icon', starCount: 2, status: 'Todo' },
-    ]
-    const rewardList: Reward[] = [
-      { name: '摩卡壶', price: 300, status: 'much' },
+    const actionList = useStorage('actionList', [
+      { name: '背单词', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
+    ])
+    const rewardList = [
+      { name: '摩卡壶', price: 300, status: 0 },
     ]
     return { actionList, rewardList }
   },
@@ -17,6 +17,9 @@ export const useConfigStore = defineStore('config', {
     },
     addReward(action: Reward) {
       this.rewardList.push(action)
+    },
+    resetActionList() {
+      this.actionList.map(action => action.status = 0)
     },
   },
 })

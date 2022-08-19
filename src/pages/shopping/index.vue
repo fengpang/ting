@@ -4,7 +4,15 @@ import type { Reward } from '~/types'
 const rewardList = useConfigStore().rewardList
 const user = useUserStore()
 const purchase = (reward: Reward): void => {
-  reward.status = 'soldOut'
+  if (reward.status === 1) {
+    alert('没了')
+    return
+  }
+  if (user.account < reward.price) {
+    alert('鬼想')
+    return
+  }
+  reward.status = 1
   user.account -= reward.price
 }
 </script>
