@@ -5,6 +5,9 @@ export const useConfigStore = defineStore('config', {
   state: () => {
     const actionList = useStorage('actionList', [
       { name: '背单词', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
+      { name: '早起', icon: 'i-openmoji-1st-place-medal', starCount: 1, status: 0 },
+      { name: '锻炼', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
+      { name: '口语', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
     ])
     const rewardList = [
       { name: '摩卡壶', price: 300, status: 0 },

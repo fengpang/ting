@@ -30,7 +30,7 @@ const reset = () => {
     </button>
     <ul>
       <li v-for="(action, index) in actionList" :key="index" class="action" :class="{ disabled: action.status === 1 }" @click="punch(action)">
-        <div i-openmoji-1st-place-medal w-sm h-sm />
+        <div :class="action.icon" w-sm h-sm />
         <span>{{ action.name }}</span>
       </li>
     </ul>

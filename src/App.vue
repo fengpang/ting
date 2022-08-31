@@ -19,6 +19,9 @@ useHead({
     },
   ],
 })
+onMounted(() => {
+  alert('1')
+})
 </script>
 
 <template>
