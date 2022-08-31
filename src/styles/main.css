@@ -29,13 +29,15 @@ html.dark {
 }
 
 .disabled {
-  background: pink;
+  background: rgba(0, 160, 0, 0.2);
+  opacity: 0.5;
+  border-radius: 50%;
   position: relative;
 }
 .disabled::after {
   position: absolute;
   content: 'DONE';
-  font-size: 120px;
+  font-size: 30px;
   display: inline-block;
   top: 50%;
   left: 50%;

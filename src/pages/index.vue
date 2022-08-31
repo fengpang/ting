@@ -16,22 +16,31 @@ const goShopping = () => {
   router.push({ name: 'shopping' })
 }
 
-const reset = () => {
-  user.reset()
+// const reset = () => {
+//   user.reset()
+//   configStore.resetActionList()
+// }
+
+// reset the action list status if the date change
+const dateString = new Date().toDateString()
+if (configStore.dateSign !== dateString) {
   configStore.resetActionList()
+  configStore.setDateSign(dateString)
 }
 </script>
 
 <template>
   <div>
     <h1>{{ user.account }}</h1>
-    <button @click="reset">
+    <!-- <button @click="reset">
       reset
-    </button>
-    <ul>
-      <li v-for="(action, index) in actionList" :key="index" class="action" :class="{ disabled: action.status === 1 }" @click="punch(action)">
-        <div :class="action.icon" w-sm h-sm />
+    </button> -->
+    <ul flex flex-wrap justify-between>
+      <li v-for="(action, index) in actionList" :key="index" flex flex-col items-center w-34 h-34 m-b-10 :class="{ disabled: action.status === 1 }" @click="punch(action)">
+        <div :class="`i-openmoji-${action.icon}`" w-24 h-24 />
         <span>{{ action.name }}</span>
+        <i i-openmoji-candy />
+        <span>{{ action.starCount }}</span>
       </li>
     </ul>
     <div i-openmoji-crown w-xs h-xs @click="goShopping" />

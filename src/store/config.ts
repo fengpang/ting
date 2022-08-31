@@ -4,15 +4,16 @@ import type { Action, Reward } from '~/types'
 export const useConfigStore = defineStore('config', {
   state: () => {
     const actionList = useStorage('actionList', [
-      { name: '背单词', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
-      { name: '早起', icon: 'i-openmoji-1st-place-medal', starCount: 1, status: 0 },
-      { name: '锻炼', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
-      { name: '口语', icon: 'i-openmoji-1st-place-medal', starCount: 2, status: 0 },
+      { name: '背单词', icon: '1st-place-medal', starCount: 2, status: 0 },
+      { name: '早起', icon: 'candy', starCount: 1, status: 0 },
+      { name: '锻炼', icon: 'candy', starCount: 2, status: 0 },
+      { name: '口语', icon: 'candy', starCount: 2, status: 0 },
     ])
     const rewardList = [
       { name: '摩卡壶', price: 300, status: 0 },
     ]
-    return { actionList, rewardList }
+    const dateSign = useStorage('dateSign', '')
+    return { actionList, rewardList, dateSign }
   },
   actions: {
     addAction(action: Action) {
@@ -23,6 +24,9 @@ export const useConfigStore = defineStore('config', {
     },
     resetActionList() {
       this.actionList.map(action => action.status = 0)
+    },
+    setDateSign(dateString: string) {
+      this.dateSign = dateString
     },
   },
 })
