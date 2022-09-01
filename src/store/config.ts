@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useStorage } from '@vueuse/core'
 import type { Action, Reward } from '~/types'
 
 export const useConfigStore = defineStore('config', {
