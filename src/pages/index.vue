@@ -40,6 +40,7 @@ if (configStore.dateSign !== dateString) {
         <div :class="`i-openmoji-${action.icon}`" w-24 h-24 />
         <span>{{ action.name }}</span>
         <i i-openmoji-candy />
+        <i i-openmoji-1st-place-medal />
         <span>* {{ action.starCount }}</span>
       </li>
     </ul>
