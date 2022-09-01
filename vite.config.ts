@@ -128,11 +128,11 @@ export default defineConfig({
   },
 
   // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-    onFinished() { generateSitemap() },
-  },
+  // ssgOptions: {
+  //   script: 'async',
+  //   formatting: 'minify',
+  //   onFinished() { generateSitemap() },
+  // },
 
   ssr: {
     // TODO: workaround until they support native ESM
