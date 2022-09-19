@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Action } from '~/types'
+window.localStorage.setItem('test', 233333333)
 const configStore = useConfigStore()
 const actionList = configStore.actionList
 const user = useUserStore()
