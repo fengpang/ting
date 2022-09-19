@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Action } from '~/types'
-window.localStorage.setItem('test', 233333333)
+window.localStorage.setItem('test', '233333333')
 const configStore = useConfigStore()
 const actionList = configStore.actionList
 const user = useUserStore()
@@ -45,7 +45,6 @@ if (configStore.dateSign !== dateString) {
         <span>* {{ action.starCount }}</span>
       </li>
     </ul>
-    <h1>if there must be something, it should be sunshine</h1>
     <div i-openmoji-crown w-xs h-xs @click="goShopping" />
   </div>
 </template>

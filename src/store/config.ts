@@ -11,7 +11,7 @@ export const useConfigStore = defineStore('config', {
       { name: '口语', icon: 'candy', starCount: 2, status: 0 },
     ])
     const rewardList = useStorage('rewardList', [
-      { name: '摩卡壶', price: 300, status: 0 },
+      { name: '金豪b椅子', price: 2400, status: 0 },
     ])
     const dateSign = useStorage('dateSign', '')
     return { actionList, rewardList, dateSign }
