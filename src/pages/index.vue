@@ -44,6 +44,7 @@ if (configStore.dateSign !== dateString) {
         <span>* {{ action.starCount }}</span>
       </li>
     </ul>
+    <h1>if there must be something, it should be sunshine</h1>
     <div i-openmoji-crown w-xs h-xs @click="goShopping" />
   </div>
 </template>
