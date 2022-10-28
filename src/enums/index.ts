@@ -1,5 +1,6 @@
 export enum ActionState {
   'todo',
+  'doing',
   'done',
 }
 

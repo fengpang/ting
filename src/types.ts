@@ -17,6 +17,8 @@ export interface Action {
   icon: string
   starCount: number
   status: number
+  maxCount: number
+  finishedCount: number
 }
 
 export interface Reward {
