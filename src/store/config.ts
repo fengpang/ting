@@ -29,8 +29,12 @@ export const useConfigStore = defineStore('config', {
       const index = this.actionList.indexOf(action)
       this.actionList.splice(index, 1)
     },
-    addReward(action: Reward) {
-      this.rewardList.push(action)
+    addReward(reward: Reward) {
+      this.rewardList.push(reward)
+    },
+    deleteReward(reward: Reward) {
+      const index = this.rewardList.indexOf(reward)
+      this.rewardList.splice(index, 1)
     },
     resetActionList() {
       this.actionList.forEach((action) => {
