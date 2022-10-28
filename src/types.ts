@@ -26,3 +26,13 @@ export interface Reward {
   price: number
   status: number
 }
+
+export interface ActionRecord {
+  time: string
+  action: Action
+}
+
+export interface ShoppingRecord {
+  time: string
+  reward: Reward
+}
