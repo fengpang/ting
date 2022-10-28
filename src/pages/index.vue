@@ -53,7 +53,7 @@ if (configStore.dateSign !== dateString) {
         <span>* {{ action.starCount }}</span>
       </li>
     </ul>
-    <div i-openmoji-crown w-xs h-xs @click="goShopping" />
+    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_riok2joc.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay @click="goShopping" />
   </div>
 </template>
 
