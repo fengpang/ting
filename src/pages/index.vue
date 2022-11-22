@@ -38,6 +38,9 @@ if (configStore.dateSign !== dateString) {
 <template>
   <div>
     <Menu />
+    <h2 @click="user.account = 60">
+      reset
+    </h2>
     <h1>{{ user.account }}</h1>
     <ul flex flex-wrap justify-between>
       <li v-for="(action, index) in actionList" :key="index" flex flex-col items-center w-34 h-34 m-b-10 :class="{ disabled: action.status === 2 }" @click="punch(action)">

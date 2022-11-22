@@ -42,7 +42,7 @@ const addAction = () => {
       outline="none active:none"
     ><br>
     reward <input
-      v-model="actionData.starCount" type="text"
+      v-model.number="actionData.starCount" type="text"
       autocomplete="false"
       mb2
       p="x4 y2"
@@ -53,7 +53,7 @@ const addAction = () => {
       outline="none active:none"
     ><br>
     maxCount <input
-      v-model="actionData.maxCount" type="text"
+      v-model.number="actionData.maxCount" type="text"
       autocomplete="false"
       mb2
       p="x4 y2"
